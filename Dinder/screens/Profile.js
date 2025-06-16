@@ -1,13 +1,10 @@
 import * as React from 'react';
 import { StyleSheet, Text, Image, Pressable, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import Group68 from '../assets/group68';
-import Group69 from '../assets/group69';
 
 const Profile = () => {
 	return (
 		<SafeAreaView style={styles.profile}>
-			<Group68 style={styles.profileChild} width={483} height={402} />
 			<Text style={[styles.janeDoe, styles.janeDoeClr]}>JANE DOE</Text>
 			<Image
 				style={styles.maskGroupIcon}
@@ -60,7 +57,6 @@ const Profile = () => {
 					</Text>
 				</View>
 			</View>
-			<Group69 style={styles.profileItem} width={30} height={30} />
 			<View style={[styles.groupParent, styles.groupLayout]}>
 				<View
 					style={[

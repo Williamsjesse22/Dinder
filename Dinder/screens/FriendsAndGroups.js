@@ -1,12 +1,5 @@
 import { Image, Pressable, StyleSheet, Text, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import Ellipse20 from '../assets/ellipse20';
-import Ellipse201 from '../assets/ellipse201';
-import Ellipse22 from '../assets/ellipse22';
-import Ellipse23 from '../assets/ellipse23';
-import Ellipse24 from '../assets/ellipse24';
-import Polygon5 from '../assets/polygon5';
-import Polygon6 from '../assets/polygon6';
 
 const FriendsAndGroups = () => {
 	return (
@@ -31,11 +24,6 @@ const FriendsAndGroups = () => {
 			<View style={styles.groupsPageChild} />
 			<View style={styles.groupsPageChild} />
 			<View style={[styles.ellipseParent, styles.ellipseLayout]}>
-				<Ellipse20
-					style={[styles.ellipseIcon, styles.ellipseLayout]}
-					width={23}
-					height={23}
-				/>
 				<View style={styles.rectangleContainer}>
 					<View style={styles.groupChild3} />
 					<View style={styles.groupChildPosition} />
@@ -44,11 +32,6 @@ const FriendsAndGroups = () => {
 			<Pressable
 				style={[styles.ellipseGroup, styles.ellipseLayout]}
 				onPress={() => {}}>
-				<Ellipse201
-					style={[styles.ellipseIcon, styles.ellipseLayout]}
-					width={23}
-					height={23}
-				/>
 				<View style={styles.rectangleContainer}>
 					<View style={styles.groupChild3} />
 					<View style={styles.groupChildPosition} />
@@ -63,16 +46,6 @@ const FriendsAndGroups = () => {
 			/>
 			<Text style={[styles.groups, styles.textFlexBox]}>GROUPS</Text>
 			<Text style={[styles.friends, styles.textFlexBox]}>FRIENDS</Text>
-			<Polygon5
-				style={[styles.polygonIcon, styles.polygonIconLayout]}
-				width={27}
-				height={41}
-			/>
-			<Polygon6
-				style={[styles.groupsPageChild2, styles.polygonIconLayout]}
-				width={27}
-				height={41}
-			/>
 			<Pressable
 				style={[styles.tommyJones, styles.doePosition]}
 				onPress={() => {}}>
@@ -124,30 +97,15 @@ const FriendsAndGroups = () => {
 				resizeMode="cover"
 				source="Mask group.png"
 			/>
-			<Ellipse22
-				style={[styles.groupsPageChild8, styles.maskGroupLayout1]}
-				width={38}
-				height={38}
-			/>
 			<Image
 				style={[styles.groupsPageChild8, styles.maskGroupLayout1]}
 				resizeMode="cover"
 				source="Mask group.png"
 			/>
-			<Ellipse23
-				style={[styles.groupsPageChild9, styles.maskGroupLayout1]}
-				width={38}
-				height={38}
-			/>
 			<Image
 				style={[styles.groupsPageChild9, styles.maskGroupLayout1]}
 				resizeMode="cover"
 				source="Mask group.png"
-			/>
-			<Ellipse24
-				style={[styles.groupsPageChild10, styles.maskGroupLayout1]}
-				width={38}
-				height={38}
 			/>
 			<Image
 				style={[styles.groupsPageChild10, styles.maskGroupLayout1]}

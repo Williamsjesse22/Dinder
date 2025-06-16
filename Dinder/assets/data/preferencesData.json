@@ -1,0 +1,15 @@
+{
+	"price": ["$", "$$", "$$$", "$$$$"],
+	"cuisine": [
+		"Italian",
+		"Mexican",
+		"Chinese",
+		"Indian",
+		"Thai",
+		"Japanese",
+		"American",
+		"Mediterranean"
+	],
+	
+	"diningStyle": ["Dine-In", "Takeout", "Delivery", "Drive-Thru", "Buffet"]
+}

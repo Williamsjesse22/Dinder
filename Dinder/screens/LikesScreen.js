@@ -1,25 +1,5 @@
 import { Image, Pressable, StyleSheet, Text, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import Group80 from '../assets/group80';
-import Polygon6 from '../assets/polygon6';
-import Star1 from '../assets/star1';
-import Star10 from '../assets/star10';
-import Star11 from '../assets/star11';
-import Star12 from '../assets/star12';
-import Star13 from '../assets/star13';
-import Star14 from '../assets/star14';
-import Star15 from '../assets/star15';
-import Star16 from '../assets/star16';
-import Star17 from '../assets/star17';
-import Star18 from '../assets/star18';
-import Star2 from '../assets/star2';
-import Star3 from '../assets/star3';
-import Star4 from '../assets/star4';
-import Star5 from '../assets/star5';
-import Star6 from '../assets/star6';
-import Star7 from '../assets/star7';
-import Star8 from '../assets/star8';
-import Star9 from '../assets/star9';
 
 const LikesScreen = () => {
 	return (
@@ -91,113 +71,10 @@ const LikesScreen = () => {
 					styles.laneDrDesTypo,
 				]}>{`248 STREET LN
         				AMES`}</Text>
-			<Star1
-				style={[styles.starIcon, styles.groupChildLayout1]}
-				width={21}
-				height={21}
-			/>
-			<Star7
-				style={[styles.likesmatchesChild3, styles.groupChildLayout1]}
-				width={21}
-				height={21}
-			/>
-			<Star2
-				style={[
-					styles.likesmatchesChild4,
-					styles.likesmatchesChildPosition2,
-				]}
-				width={21}
-				height={21}
-			/>
-			<Star8
-				style={[
-					styles.likesmatchesChild5,
-					styles.likesmatchesChildPosition2,
-				]}
-				width={21}
-				height={21}
-			/>
-			<Star3
-				style={[
-					styles.likesmatchesChild6,
-					styles.likesmatchesChildPosition1,
-				]}
-				width={21}
-				height={21}
-			/>
-			<Star9
-				style={[
-					styles.likesmatchesChild7,
-					styles.likesmatchesChildPosition1,
-				]}
-				width={21}
-				height={21}
-			/>
-			<Star4
-				style={[
-					styles.likesmatchesChild8,
-					styles.likesmatchesChildPosition,
-				]}
-				width={21}
-				height={21}
-			/>
 			<View style={[styles.likesmatchesChild9, styles.childLayout]} />
-			<Star10
-				style={[
-					styles.likesmatchesChild10,
-					styles.likesmatchesChildPosition,
-				]}
-				width={21}
-				height={21}
-			/>
 			<View style={[styles.bookClubParent, styles.groupParentLayout]}>
 				<Text style={[styles.bookClub, styles.textClr]}>BOOK CLUB</Text>
-				<Polygon6
-					style={[styles.groupInner, styles.groupInnerLayout]}
-					width={13}
-					height={8}
-				/>
 			</View>
-			<Star5
-				style={[
-					styles.likesmatchesChild11,
-					styles.likesmatchesChildLayout1,
-				]}
-				width={21}
-				height={21}
-			/>
-			<Star17
-				style={[
-					styles.likesmatchesChild12,
-					styles.likesmatchesChild12Position,
-				]}
-				width={21}
-				height={21}
-			/>
-			<Star11
-				style={[
-					styles.likesmatchesChild13,
-					styles.likesmatchesChildLayout1,
-				]}
-				width={21}
-				height={21}
-			/>
-			<Star6
-				style={[
-					styles.likesmatchesChild11,
-					styles.likesmatchesChildLayout1,
-				]}
-				width={21}
-				height={21}
-			/>
-			<Star12
-				style={[
-					styles.likesmatchesChild13,
-					styles.likesmatchesChildLayout1,
-				]}
-				width={21}
-				height={21}
-			/>
 			<Text style={[styles.text3, styles.textTypo]}>(245)</Text>
 			<View
 				style={[
@@ -210,31 +87,6 @@ const LikesScreen = () => {
 						styles.laneDrDesTypo,
 					]}>{`123 DRIVE DR
           					ANKENY`}</Text>
-				<Star13
-					style={[styles.groupChild1, styles.groupChildLayout1]}
-					width={21}
-					height={21}
-				/>
-				<Star14
-					style={[styles.groupChild2, styles.groupChildLayout1]}
-					width={21}
-					height={21}
-				/>
-				<Star15
-					style={[styles.groupChild3, styles.groupChildLayout1]}
-					width={21}
-					height={21}
-				/>
-				<Star16
-					style={[styles.groupChild4, styles.groupChildLayout1]}
-					width={21}
-					height={21}
-				/>
-				<Star18
-					style={[styles.groupChild5, styles.groupChildLayout1]}
-					width={21}
-					height={21}
-				/>
 				<Text style={[styles.text4, styles.textTypo]}>(5)</Text>
 			</View>
 			<Text style={[styles.text5, styles.textTypo]}>(180)</Text>
@@ -255,7 +107,6 @@ const LikesScreen = () => {
 			<View
 				style={[styles.likesmatchesChild17, styles.groupInnerLayout]}
 			/>
-			<Group80 style={styles.groupIcon} width={426} height={398} />
 			<View
 				style={[
 					styles.likesmatchesChild18,
