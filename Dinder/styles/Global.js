@@ -8,6 +8,7 @@
     const smallerHeadings = 22;
     const defaultFontSize = 28;
     const subheadingFontSize = 32;
+    const subTitle = 50;
     const title = 60;
     const headingFontSize = 80;
 
@@ -68,6 +69,10 @@
     smallerHeadings: {
         fontSize: smallerHeadings
     },
+
+    subTitle: {
+        fontSize: subTitle
+    }
 
     });
 

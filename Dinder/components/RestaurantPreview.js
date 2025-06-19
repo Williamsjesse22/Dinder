@@ -8,7 +8,7 @@ import InfoBadge from './InfoBadge';
 const RestaurantPreview = ({ name, image, descriptors, address, rating }) => {
 	return (
 		<View style={styles.container}>
-			<Text style={GlobalStyles.subHeading}>{name}</Text>
+			<Text style={GlobalStyles.subTitle}>{name}</Text>
 			<View style={styles.imageContainer}>
 				<Image source={image} style={styles.image} />
 			</View>
