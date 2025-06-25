@@ -5,8 +5,6 @@ const styles = StyleSheet.create({
 		overflowX: 'hidden',
 	},
 
-	backbutton: {},
-
     header: {
         color: '#F33534',
     },

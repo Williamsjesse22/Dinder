@@ -13,6 +13,7 @@ import backbutton from '../assets/images/backbutton.png';
 import PageHeader from '../components/PageHeader';
 import RestaurantPreview from '../components/RestaurantPreview';
 import ReviewCard from '../components/ReviewCard';
+import { Dimensions } from 'react-native';
 
 const RestaurantInfo = () => {
 	const navigation = useNavigation();
@@ -23,7 +24,7 @@ const RestaurantInfo = () => {
 				backgroundColor="transparent"
 				barStyle="light-content"
 			/>
-			<PageHeader heightRatio={0.1} />
+			<PageHeader heightRatio={0.1} width={Dimensions.get('window').width} />
 			<ScrollView>
 				<Pressable onPress={() => navigation.navigate('Home')}>
 					<Image

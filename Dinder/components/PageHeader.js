@@ -4,10 +4,9 @@ import { Dimensions, View } from 'react-native';
 import NavSpike from '../assets/images/navSpike.svg';
 import styles from '../styles/PageHeaderStyles';
 
-const PageHeader = ({ heightRatio, children, text }) => {
-	const screenWidth = Dimensions.get('window').width;
+const PageHeader = ({ heightRatio, width, children, text, rounded }) => {
 	const spikeWidth = 30; // px from Figma
-	const spikeCount = Math.ceil(screenWidth / spikeWidth);
+	const spikeCount = Math.ceil(width / spikeWidth);
 	const spikes = Array.from({ length: spikeCount }, (_, i) => (
 		<NavSpike
 			key={`spike-${i}`}
@@ -22,7 +21,12 @@ const PageHeader = ({ heightRatio, children, text }) => {
 			<View
 				style={[
 					styles.headerContainer,
-					{ height: Dimensions.get('window').height * heightRatio },
+					{ height: Dimensions.get('window').height * heightRatio,
+						borderTopLeftRadius: rounded ? 15 : 0,
+						borderTopRightRadius: rounded ? 15 : 0,
+						borderBottomLeftRadius: rounded ? 5 : 0,
+						borderBottomRightRadius: rounded ? 5 : 0,
+					 },
 				]}>
 				{children && (
 					<View style={styles.headerContent}>

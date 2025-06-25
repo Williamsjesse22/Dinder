@@ -52,7 +52,7 @@ const styles = StyleSheet.create({
     backgroundColor: "#FFF",
   },
   activeText: {
-    color: "#FFF",
+    color: "#fff",
   },
   inactiveText: {
     color: "#F33534",

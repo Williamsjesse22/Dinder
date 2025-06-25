@@ -23,7 +23,6 @@ const AuthBaseFields = () => {
 						GlobalStyles.textbox,
 						{ fontFamily: 'VinaSans_400Regular' },
 					]}
-					placeholder="Enter your email"
 					value={email}
 					onChangeText={setEmail}
 				/>
@@ -42,7 +41,6 @@ const AuthBaseFields = () => {
 						GlobalStyles.textbox,
 						{ fontFamily: 'VinaSans_400Regular' },
 					]}
-					placeholder="Enter your password"
 					secureTextEntry
 					value={password}
 					onChangeText={setPassword}

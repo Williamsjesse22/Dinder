@@ -1,0 +1,78 @@
+{
+  "members": [
+    {
+      "key": "TonyBradley",
+      "name": "Tony Bradley",
+      "imageKey": "TonyBradley",
+      "dietary": ["None"],
+      "accommodations": ["Blind"]
+    },
+    {
+      "key": "StacyBradley",
+      "name": "Stacy Bradley",
+      "imageKey": "StacyBradley",
+      "dietary": ["Pescatarian", "Mushroom-free"],
+      "accommodations": []
+    },
+    {
+      "key": "SamanthaJones",
+      "name": "Samantha Jones",
+      "imageKey": "SamanthaJones",
+      "dietary": ["Vegetarian"],
+      "accommodations": ["Wheelchair Accessible"]
+    },
+    {
+      "key": "MichelleCooper",
+      "name": "Michelle Cooper",
+      "imageKey": "MichelleCooper",
+      "dietary": ["Gluten-Free"],
+      "accommodations": ["Pet-Friendly"]
+    },
+    {
+      "key": "MasonJames",
+      "name": "Mason James",
+      "imageKey": "MasonJames",
+      "dietary": ["Gluten-Free", "Carnivore", "Must-Have-Coffee"] ,
+      "accommodations": ["Noise Sensitive"]
+    },
+    {
+      "key": "BobbyFrieder",
+      "name": "Bobby Frieder",
+      "imageKey": "BobbyFrieder",
+      "dietary": ["None"],
+      "accommodations": ["None"]
+    }
+  ],
+  "groups": [
+    {
+      "name": "Date Night",
+      "imageKey": "DateNightGroup",
+      "memberKeys": ["TonyBradley", "StacyBradley"]
+    },
+    {
+      "name": "Book Club",
+      "imageKey": "BookClubGroup",
+      "memberKeys": ["SamanthaJones", "MichelleCooper"]
+    },
+    {
+      "name": "Girls Night",
+      "imageKey": "GirlsNightGroup",
+      "memberKeys": ["MasonJames", "BobbyFrieder"]
+    },
+    {
+      "name": "Friends Hangout Group",
+      "imageKey": "FriendsHangoutGroup",
+      "memberKeys": ["TonyBradley", "SamanthaJones", "MasonJames", "BobbyFrieder"]
+    },
+    {
+      "name": "Travel Group",
+      "imageKey": "TravelGroup",
+      "memberKeys": ["StacyBradley", "MichelleCooper", "TonyBradley", "BobbyFrieder"]
+    },
+    {
+      "name": "Besties Group",
+      "imageKey": "BestiesGroup",
+      "memberKeys": ["StacyBradley", "MichelleCooper", "SamanthaJones", "BobbyFrieder"]
+    }
+  ]
+}

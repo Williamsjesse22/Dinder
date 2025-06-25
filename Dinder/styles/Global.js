@@ -26,6 +26,7 @@
         borderColor: '#fff',
         backgroundColor: secondaryColor,
         fontSize: defaultFontSize,
+        fontFamily: fontFamily,
     },
 
     ColorlessTextbox: {

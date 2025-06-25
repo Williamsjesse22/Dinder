@@ -27,7 +27,14 @@ import HeaderBar from "../components/HeaderBar";
 import InfoBadge from "../components/InfoBadge";
 import PreferencesPopup from "../components/PreferencesPopup";
 import styles from "../styles/HomeScreenStyles";
+import friendsData from "../assets/data/data.json";
+import GroupScroller from "@/components/GroupScroller";
+import GroupSwitcherPopup from "../components/GroupSwitcherPopup";
+import TimePopupModal from "@/components/TimePopupModal";
+import { getResolvedGroups } from "../utils/resolveGroupData";
+import { formatApproxTimes } from "../utils/formatApproxTimes";
 
+const groupOptions = getResolvedGroups();
 const cards = [
   {
     name: "La Vine Bistro",
@@ -66,6 +73,12 @@ const HomeScreen = () => {
   const xOpacity = useSharedValue(0);
   const checkOpacity = useSharedValue(0);
   const [showPrefs, setShowPrefs] = useState(false);
+  const [groupSelectorPosition, setGroupSelectorPosition] = useState({
+    x: 0,
+    y: 0,
+  });
+  const [showTimePopup, setShowTimePopup] = useState(false);
+  const [timeDisplayText, setTimeDisplayText] = useState("Open Now");
 
   const goToNextCard = () => {
     setCardIndex((prev) => (prev + 1) % cards.length);
@@ -86,13 +99,13 @@ const HomeScreen = () => {
       translateY.value = e.translationY;
       if (e.translationX < -100) {
         xOpacity.value = withTiming(1, { duration: 100 });
-        checkOpacity.value = withTiming(0, { duration: 300 });
+        checkOpacity.value = withTiming(0, { duration: 450 });
       } else if (e.translationX > 100) {
         checkOpacity.value = withTiming(1, { duration: 100 });
-        xOpacity.value = withTiming(0, { duration: 300 });
+        xOpacity.value = withTiming(0, { duration: 500 });
       } else {
         xOpacity.value = withTiming(0, { duration: 100 });
-        checkOpacity.value = withTiming(0, { duration: 300 });
+        checkOpacity.value = withTiming(0, { duration: 500 });
       }
     })
     .onEnd(() => {
@@ -127,6 +140,21 @@ const HomeScreen = () => {
     };
   });
 
+  const userAsGroup = {
+    name: "Jane Doe",
+    image: require("../assets/images/SampleProfilePhoto.jpg"), // replace with actual image
+    members: [], // no members, solo mode
+  };
+  const [selectedGroup, setSelectedGroup] = useState({
+    name: "Jane Doe",
+    image: require("../assets/images/SampleProfilePhoto.jpg"), // replace with actual image
+    members: [], // no members, solo mode
+  });
+
+  const finalGroups = [userAsGroup, ...groupOptions];
+
+  const [showGroupSelector, setShowGroupSelector] = useState(false);
+
   return (
     <SafeAreaView
       style={[
@@ -134,7 +162,17 @@ const HomeScreen = () => {
         { paddingBottom: Dimensions.get("window").height * 0.075 },
       ]}
     >
-      <HeaderBar />
+      <HeaderBar
+        selectedGroup={selectedGroup}
+        setShowGroupSelector={setShowGroupSelector}
+        onLongPressWithPosition={(x, y) => {
+          setGroupSelectorPosition({ x, y });
+          setShowGroupSelector(true);
+        }}
+        onOpenTimePopup={() => setShowTimePopup(true)}
+        timeLabel={timeDisplayText}
+      />
+
       <TitleBar name={cards[cardIndex].name} />
 
       <GestureDetector gesture={panGesture}>
@@ -181,9 +219,56 @@ const HomeScreen = () => {
         </Pressable>
       </View>
       <BottomNavBar />
+
+      {showGroupSelector && (
+        <Pressable
+          style={styles.groupSelectorOverlay}
+          onPress={() => setShowGroupSelector(false)}
+        >
+          <View style={styles.groupSelectorPopupWrapper}>
+            <GroupSwitcherPopup
+              groupsData={finalGroups}
+              onSelectGroup={(group) => {
+                setSelectedGroup(group);
+                setShowGroupSelector(false);
+              }}
+              position={groupSelectorPosition}
+            />
+          </View>
+        </Pressable>
+      )}
+
       <PreferencesPopup
         visible={showPrefs}
         onClose={() => setShowPrefs(false)}
+      />
+
+      <TimePopupModal
+        visible={showTimePopup}
+        onClose={() => setShowTimePopup(false)}
+        onConfirm={(selection) => {
+          const { days, time } = selection;
+
+          let label = "Open Now";
+          const daysAbbrev = days
+            .filter((d) => d !== "Today")
+            .map((d) => d.charAt(0))
+            .join("");
+
+          const isTimeArray = Array.isArray(time);
+          const formattedTime = isTimeArray ? formatApproxTimes(time) : time;
+
+          if (daysAbbrev && formattedTime !== "Open Now") {
+            label = `${daysAbbrev}: ${formattedTime}`;
+          } else if (!daysAbbrev && formattedTime !== "Open Now") {
+            label = `Today: ${formattedTime}`;
+          } else if (daysAbbrev && formattedTime === "Open Now") {
+            label = `${daysAbbrev}: Open Now`;
+          }
+
+          setTimeDisplayText(label);
+          setShowTimePopup(false);
+        }}
       />
     </SafeAreaView>
   );

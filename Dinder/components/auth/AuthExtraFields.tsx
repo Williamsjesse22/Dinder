@@ -22,7 +22,6 @@ const AuthExtraFields = () => {
 						GlobalStyles.textbox,
 						{ fontFamily: 'VinaSans_400Regular' },
 					]}
-					placeholder="Confirm your password"
 					secureTextEntry
 					value={confirm}
 					onChangeText={setConfirm}

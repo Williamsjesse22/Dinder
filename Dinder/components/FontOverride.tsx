@@ -1,23 +1,30 @@
-const defaultFontFamily = 'VinaSans_400Regular';
+import { Text } from "react-native";
 
-const oldTextRender = (Text as any).render;
-(Text as any).render = function (...args: any[]) {
-	const origin = oldTextRender.call(this, ...args);
-	const originalStyle = origin.props.style || [];
-	const flattened = Array.isArray(originalStyle)
-		? originalStyle
-		: [originalStyle];
+let hasOverridden = false;
 
-	const alreadyHasFont = flattened.some((s) => s?.fontFamily != null);
+export const applyFontOverride = (fontFamily: string) => {
+  if (hasOverridden) return;
+  hasOverridden = true;
 
-	return {
-		...origin,
-		props: {
-			...origin.props,
-			style: [
-				...flattened,
-				!alreadyHasFont && { fontFamily: defaultFontFamily },
-			].filter(Boolean),
-		},
-	};
+  const oldRender = (Text as any).render;
+
+  (Text as any).render = function (...args: any[]) {
+    const origin = oldRender.call(this, ...args);
+    const originalStyle = origin.props.style || [];
+    const flattened = Array.isArray(originalStyle)
+      ? originalStyle
+      : [originalStyle];
+
+    const alreadyHasFont = flattened.some((s) => s?.fontFamily != null);
+
+    return {
+      ...origin,
+      props: {
+        ...origin.props,
+        style: [...flattened, !alreadyHasFont && { fontFamily }].filter(
+          Boolean
+        ),
+      },
+    };
+  };
 };
